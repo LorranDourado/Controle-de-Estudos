@@ -1,1 +1,0 @@
-<button onclick="window.open('login.html', '_self')">Voltar para Login</button>

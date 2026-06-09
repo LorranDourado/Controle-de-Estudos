@@ -1,22 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  </head>
+  <body>
     <div class="container">
-        <h1>Entrar</h1>
-        <div class="input-group">
-            <form id="login-form">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Senha" required>
-                <button id="login-btn">Entrar</button>
-            </form>
+      <!--  Tela de Login -->
+      <div class="form-caixa login">
+        <form action="#">
+          <h1>Entrar</h1>
+          <div class="input-group">
+            <input type="text" placeholder="Usuario" required />
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"placeholder="Senha"required/>
+            <i class="fa-solid fa-eye toggle-password"></i>
+          </div>
+          <div class="esqueci-senha">
+            <a href="#">Esqueceu sua senha?</a>
+          </div>
+          <button type="submit" class="btn" id="btn-entrar">Entrar</button>
+        </form>
+      </div>
+
+      <!--  Tela de Cadastro -->
+      <div class="form-caixa cadastro">
+        <form id="form-cadastro" action="#">
+          <h1>Cadastro</h1>
+          <div class="input-group">
+            <input type="text" placeholder="Usuario" required />
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-group">
+            <input type="email" placeholder="Email" required />
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"placeholder="Senha"required/>
+            <i class="fa-solid fa-eye toggle-password"></i>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"placeholder="Confirmar Senha"required/>
+            <i class="fa-solid fa-eye toggle-password"></i>
+          </div>
+          <button class="btn" id="btn-cadastrar" type="submit">
+            Cadastrar
+          </button>
+        </form>
+      </div>
+
+      <!-- Aqui fica o painel de transição da tela de login/cadastro -->
+      <div class="alternar-caixa">
+        <div class="alternar-painel esquerda">
+          <h1>Bem-vindo!</h1>
+          <p>Não possui conta?</p>
+          <button class="btn" id="btn-cadastro" type="button">Cadastre-se</button>
         </div>
-        <p id="message">Não possui conta? <a href="register.html">Cadastre-se</a></p>
+        <div class="alternar-painel direita">
+          <h1>Faça seu login!</h1>
+          <p>Já possui conta cadastrada?</p>
+          <button class="btn" id="btn-login" type="button">Entrar</button>
+        </div>
+      </div>
     </div>
-</body>
+
+    <script src="assets/js/login.js"></script>
+  </body>
 </html>
