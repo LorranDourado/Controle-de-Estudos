@@ -1,55 +1,34 @@
 const container = document.querySelector('.container');
-
 const btnCadastro = document.getElementById('btn-cadastro');
 const btnLogin = document.getElementById('btn-login');
 const formCadastro = document.getElementById('form-cadastro');
 
-// Abre tela de cadastro
-btnCadastro.addEventListener('click', () => {
-    container.classList.add('active');
-});
+// Função para trocar de tela (entre login e cadastro)
+const toggleView = (isActive) => container.classList.toggle('active', isActive);
 
-// Volta para tela de login
-btnLogin.addEventListener('click', () => {
-    container.classList.remove('active');
-});
+// Eventos de Navegação
+btnCadastro.addEventListener('click', () => toggleView(true));
+btnLogin.addEventListener('click', () => toggleView(false));
 
-// Envio do formulário de cadastro
+// Envio do formulário
 formCadastro.addEventListener('submit', (event) => {
     event.preventDefault();
-
-    // Aqui futuramente você enviará os dados para o PHP
-
+    
+    
     alert('Cadastro realizado com sucesso!');
-
-    // Após cadastrar, volta para login
-    container.classList.remove('active');
+    toggleView(false); // Volta para o login
+    formCadastro.reset(); // Limpa os campos do formulário após sucesso
 });
 
-const toggles = document.querySelectorAll('.toggle-password');
-
-toggles.forEach(toggle => {
-
+// Alternar senha visível/invisível (ícone de olho)
+document.querySelectorAll('.toggle-password').forEach(toggle => {
     toggle.addEventListener('click', () => {
-
         const input = toggle.previousElementSibling;
-
-        if (input.type === 'password') {
-
-            input.type = 'text';
-
-            toggle.classList.remove('fa-eye');
-            toggle.classList.add('fa-eye-slash');
-
-        } else {
-
-            input.type = 'password';
-
-            toggle.classList.remove('fa-eye-slash');
-            toggle.classList.add('fa-eye');
-
-        }
-
+        const isPassword = input.type === 'password';
+        
+        input.type = isPassword ? 'text' : 'password';
+        
+        toggle.classList.toggle('fa-eye', !isPassword);
+        toggle.classList.toggle('fa-eye-slash', isPassword);
     });
-
 });
