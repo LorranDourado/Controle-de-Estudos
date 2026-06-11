@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    background-color: #6b6b6b;
+
+}
+
+#sidebar-content{
+    padding: 12px;
+}
+
+#user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#user-avatar{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(230, 23, 23);
+    height: 100vh;
+}
+
+#user-unfos{
+    display: flex;
+    flex-direction: column;
+}
+
+#user-infos span:last-child{
+    color: #6b6b6b;
+    font-size: 12px;
+    
+}
+
+#side-items{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-items{
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.side-items.active{
+    background-color: #72d1ff;
+}
+
+.side-items:hover:not(activer), #logout-btn:hover{
+    background-color: white;
+}
+
+.side-items a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.side-items a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+#logout{
+    border-top: 1px;
+    padding: 12px;
+}
+
+#logout-btn{
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display:flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: transparent;
+}
